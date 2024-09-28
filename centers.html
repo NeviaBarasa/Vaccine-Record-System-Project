@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccination Centers</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="background">
+    <h1>Vaccination Centers</h1>
+
+    <main>
+
+      <section>
+        <h3>Centers</h3>
+        <ul id="centersList"></ul>
+        <div id="status"></div>
+      </section>
+
+      <section>
+        <h3>Add centers</h3>
+
+        <form id="centersForm" action="/centers" method="POST">
+          <div>
+            <label for="centername">centername</label>
+            <input type="text" name="centername" required />
+          </div>
+
+          <div>
+            <label for="address">address</label>
+            <input type="text" name="address" required />
+          </div>
+
+          <div>
+            <label for="contact_info">Contact_info</label>
+            <input
+              type="number"
+              name="contact_info"
+              required
+            />
+          </div>
+          <div>
+            <label for="services_offered">services_offered</label>
+            <input type="text" name="services_offered" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccine Record System</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="background">
+    <h1>Vaccine Record System</h1>
+
+    <main>
+
+      <section>
+        <h3>Vaccine Record</h3>
+        <ul id="vaccinationList"></ul>
+        <div id="status"></div>
+      </section>
+
+      <section>
+        <h3>Add Vaccinations</h3>
+
+        <form id="vaccinationForm" action="/vaccine" method="POST">
+          <div>
+            <label for="vaccine_name">vaccine_name</label>
+            <input type="text" name="vaccine_name" required />
+          </div>
+
+          <div>
+            <label for="date_administered">date_administered</label>
+            <input type="date" name="date_administered" required />
+          </div>
+
+          <div>
+            <label for="provider">provider</label>
+            <input type="text" name="provider" required />
+          </div>
+
+          
+          <div>
+            <label for="next_due_date">next_due_date</label>
+            <input type="date" name="next_due_date" required />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
