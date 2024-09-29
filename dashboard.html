@@ -1,24 +1,23 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vaccine Record System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaccine Record System Dashboard</title>
+
   
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+  <link rel="stylesheet" href="dashboard.css">
+
   
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Vaccine Record System</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
@@ -46,8 +45,8 @@
       </div>
     </div>
   </nav>
+
   
-  <!-- Homepage Section -->
   <section id="homepage" class="homepage section-padding">
     <div class="container text-center">
       <h1>Welcome to Vaccine Record System</h1>
@@ -55,23 +54,25 @@
       <button class="btn btn-primary btn-lg">Get Started</button>
     </div>
   </section>
-  
-  <!-- Dashboard Section -->
+
+ 
   <section id="dashboard" class="dashboard section-padding bg-light">
     <div class="container">
       <h2 class="text-center mb-4">Dashboard</h2>
       <div class="row">
         <div class="col-md-6">
+          <h4 class="text-center">Doses Administered</h4>
           <canvas id="vaccinationChart"></canvas>
         </div>
         <div class="col-md-6">
+          <h4 class="text-center">Upcoming Vaccines</h4>
           <canvas id="upcomingChart"></canvas>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Vaccination Records Section -->
+
+ 
   <section id="records" class="records section-padding">
     <div class="container">
       <h2 class="text-center mb-4">Vaccination Records</h2>
@@ -85,8 +86,13 @@
           </tr>
         </thead>
         <tbody id="recordsTable">
-        
-  <!-- Educational Resources Section -->
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  
   <section id="resources" class="resources section-padding">
     <div class="container">
       <h2 class="text-center mb-4">Educational Resources</h2>
@@ -96,34 +102,94 @@
             <div class="card-body">
               <h5 class="card-title">Understanding Vaccines</h5>
               <p class="card-text">Learn about how vaccines work and their importance in preventing diseases.</p>
-              <a href="#" class="btn btn-primary">Read More</a>
+<a href="https://www.who.int/news-room/feature-stories/detail/how-do-vaccines-work" class="btn btn-primary" target="_blank">Read More</a>
+
             </div>
           </div>
         </div>
-        <!-- Add more resource cards as needed -->
+        
       </div>
     </div>
   </section>
+
   
-  <!-- Footer -->
-  <footer class="footer bg-dark text-white text-center py-3">
+  <footer class="footer">
     <div class="container">
       <p>&copy; 2024 Vaccine Record System. All rights reserved.</p>
       <a href="#" class="text-white me-2">Privacy Policy</a>
       <a href="#" class="text-white">Terms of Service</a>
     </div>
   </footer>
+
   
-  <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Chart.js -->
+
+ 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   
-  <!-- Google Maps JavaScript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
-  
-  <!-- Custom JS -->
-  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const vaccinationChartCtx = document.getElementById('vaccinationChart').getContext('2d');
+        const vaccinationChart = new Chart(vaccinationChartCtx, {
+            type: 'line',
+            data: {
+                labels: ['COVID-19', 'Flu', 'Hepatitis B', 'Polio', 'Measles', 'HPV'],
+                datasets: [{
+                    label: 'Doses Administered',
+                    data: [3, 1, 2, 3, 2, 1],
+                    backgroundColor: ['#800000', '#660000', '#990000', '#B22222', '#A52A2A', '#D2691E'],
+                    borderColor: '#800000',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Doses'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Vaccines'
+                        }
+                    }
+                }
+            }
+        });
+
+        
+        const upcomingChartCtx = document.getElementById('upcomingChart').getContext('2d');
+        const upcomingChart = new Chart(upcomingChartCtx, {
+            type: 'pie',
+            data: {
+                labels: ['COVID-19 Booster', 'Flu Shot', 'HPV Shot', 'Shingles'],
+                datasets: [{
+                    label: 'Upcoming Vaccines',
+                    data: [1, 1, 1, 1],
+                    backgroundColor: ['#800000', '#660000', '#990000', '#D2691E'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                }
+            }
+        });
+    });
+  </script>
 </body>
 </html>

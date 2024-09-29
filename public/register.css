@@ -1,0 +1,188 @@
+
+body {
+    background-color: #F2F2F2;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;           
+}
+
+a {
+    text-decoration: none;
+    color: #800000; 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+#container-register {
+    width: 400px;
+    background-color: #FFFFFF;
+    padding: 30px 60px;
+    border: 2px solid #800000; 
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 450px) {
+    #container-register {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+#title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #800000; 
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-icons.lock {
+    font-size: 28px;
+    margin-right: 8px;
+    color: #800000; 
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-addon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #800000; /* Maroon */
+}
+
+.input input {
+    width: 100%;
+    padding: 12px 12px 12px 40px; 
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input input:focus {
+    border-color: #800000; /* Maroon */
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 0, 0.3);
+}
+
+
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #800000; 
+}
+
+.remember-me label {
+    font-size: 14px;
+    color: #757575;
+}
+
+
+
+.submit-button {
+    background-color: #800000; 
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #660000; 
+}
+
+
+
+.privacy {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.privacy a {
+    font-size: 14px;
+    color: #800000; 
+}
+
+.privacy a:hover {
+    color: #660000; 
+}
+
+
+
+.register {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.register span {
+    color: #657575;
+    font-size: 14px;
+}
+
+.register button#register-link {
+    background-color: #800000; 
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.register button#register-link:hover {
+    background-color: #660000; 
+}
+
+
+.material-icons {
+    font-size: 20px;
+}
+
+
+.input input::placeholder {
+    color: #A9A9A9;
+    font-style: italic;
+}
+
+
+button {
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,142 @@
+
+body {
+    background-color: #F2F2F2;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #800000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.navbar {
+    background-color: #800000;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link.active {
+    color: #F2F2F2;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+
+.homepage {
+    padding: 60px 0;
+    background-color: #FFFFFF;
+}
+
+.homepage h1 {
+    color: #800000;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.homepage .lead {
+    color: #555555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.homepage .btn-primary {
+    background-color: #800000;
+    border: none;
+}
+
+.homepage .btn-primary:hover {
+    background-color: #660000;
+}
+
+
+#dashboard {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+
+#dashboard h2, #dashboard h4 {
+    color: #800000;
+    font-weight: 700;
+}
+
+#dashboard h4 {
+    margin-bottom: 20px;
+}
+
+#dashboard .row {
+    margin-top: 20px;
+}
+
+
+#records {
+    padding: 60px 0;
+    background-color: #F2F2F2;
+}
+
+#records h2 {
+    color: #800000;
+    font-weight: 700;
+}
+
+
+#resources {
+    background-color: #FFFFFF;
+    padding: 60px 0;
+}
+
+#resources h2 {
+    color: #800000;
+    font-weight: 700;
+}
+
+.resource-card {
+    background-color: #F9F9F9;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 30px;
+}
+
+.resource-card .card-body {
+    padding: 20px;
+}
+
+.resource-card .btn-primary {
+    background-color: #800000;
+    border: none;
+}
+
+.resource-card .btn-primary:hover {
+    background-color: #660000;
+}
+
+
+.footer {
+    background-color: #800000;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: #CCCCCC;
+}
+
+
+canvas {
+    width: 100% !important;
+    height: 500px !important;
+}

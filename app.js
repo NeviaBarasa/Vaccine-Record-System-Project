@@ -101,9 +101,9 @@ app.get('/centers',(req,res)=>{
 // post request incorporating html files
 
 app.post('/register',async(req,res)=>{
-    const{email,username,password} = req.body
-    const hashedpassword = await bcrypt.hash(password,8)
-    vrecords.query("INSERT INTO users SET ?",{email: email,username: username,password: hashedpassword},(err,result) =>{
+    const{username,email,password_hash,contact_info} = req.body
+    const hashedpassword = await bcrypt.hash(password_hash,8)
+    vrecords.query("INSERT INTO users SET ?",{username: username,email: email,password_hash: hashedpassword,contact_info: contact_info},(err,result) =>{
         if(err){
             console.log(err)
         } else{
@@ -116,13 +116,13 @@ app.post('/register',async(req,res)=>{
 
 
 app.post('/login', async(req, res)=> {
-    const {username, password}= req.body
-    dbase.query("SELECT * FROM Users WHERE username = ?", [username], async(err, result)=>{
+    const {username,password_hash}= req.body
+    vrecords.query("SELECT * FROM users WHERE username = ?", [username] ,async(err, result)=>{
         if(err){
             console.log(err)
             } else {
                 if (result.length >0){
-                    const isMatch = await bcrypt.compare(req.body.password, result[0].password)
+                    const isMatch = await bcrypt.compare(req.body.password_hash, result[0].password_hash)
                 if(isMatch){
                     res.redirect('/vaccine')
                 } else {
@@ -141,7 +141,7 @@ app.post('/login', async(req, res)=> {
 
 app.post('/vaccine',async(req,res)=>{
     const{vaccine_name,date_administered,provider,next_due_date} = req.body
-    vrecords.query("INSERT INTO expenses SET ?",{vaccine_name: vaccine_name,date_administered: date_administered,provider: provider,next_due_date:next_due_date},(err,result) =>{
+    vrecords.query("INSERT INTO vaccinations SET ?",{vaccine_name: vaccine_name,date_administered: date_administered,provider: provider,next_due_date:next_due_date},(err,result) =>{
         if(err){
             console.log(err)
         } else{
@@ -153,7 +153,7 @@ app.post('/vaccine',async(req,res)=>{
 
 app.post('/centers',async(req,res)=>{
     const{centername,address,contact_info,services_offered} = req.body
-    vrecords.query("INSERT INTO expenses SET ?",{centername: centername,address: address,contact_info: contact_info,services_offered:services_offered},(err,result) =>{
+    vrecords.query("INSERT INTO centers SET ?",{centername: centername,address: address,contact_info: contact_info,services_offered:services_offered},(err,result) =>{
         if(err){
             console.log(err)
         } else{

@@ -1,21 +1,17 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <meta name="description" content="Login - Register Template">
-    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="description" content="Login">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        body {
-            background-color: #F2F2F2;
-        }
-    </style>
+    
 </head>
 
-<body class="background">
+<body>
     <div id="container-login">
         <div id="title">
             <i class="material-icons lock">lock</i> Login
@@ -23,39 +19,46 @@
 
         <form action="/login" method="POST">
             <div class="input">
+                <label for="username" class="visually-hidden"></label>
                 <div class="input-addon">
                     <i class="material-icons">face</i>
                 </div>
-                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off" name="username">
+                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off" name="username" aria-label="Username">
             </div>
 
-            <div class="clearfix"></div>
-
+            
             <div class="input">
+                <label for="password" class="visually-hidden"></label>
                 <div class="input-addon">
                     <i class="material-icons">vpn_key</i>
                 </div>
-                <input id="password" placeholder="Password" type="password" required class="validate" autocomplete="off" name="password">
+                <input id="password_hash" placeholder="Password" type="password" required class="validate" autocomplete="off" name="password_hash" aria-label="Password">
             </div>
 
+           
             <div class="remember-me">
-                <input type="checkbox">
-                <span style="color: #757575">Remember Me</span>
+                <input type="checkbox" id="remember-me" name="remember_me">
+                <label for="remember-me">Remember Me</label>
             </div>
 
-            <input type="submit" value="Log In" />
+           
+            <input type="submit" value="Log In" class="submit-button" />
         </form>
 
+        
         <div class="forgot-password">
             <a href="#">Forgot your password?</a>
         </div>
+
+       
         <div class="privacy">
             <a href="#">Privacy Policy</a>
         </div>
 
+       
         <div class="register">
-            <span style="color: #657575">Don't have an account yet?</span>
-            <a href="/register"><button id="register-link">Register here</button></a>
+            <span>Don't have an account yet?</span>
+            <a href="/register" class="button-link">Register here</a>
         </div>
     </div>
 </body>
